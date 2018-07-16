@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>Panda</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/libs.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+   <div class="header">
+       <div class="header__top" id="navbar">
+           <div class="burger">
+               <span></span>
+               <span></span>
+               <span></span>
+           </div>
+           <div class="header__logo">
+               <a href="#" class="logo__svg">
+                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="175" height="120" viewBox="0 0 175 120">
+                       <image id="Слой_1" data-name="Слой 1" x="5" width="164" height="117" xlink:href="data:img/png;base64,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"/>
+                   </svg>
+
+
+               </a>
+           </div>
+           <nav class="header__menu">
+               <ul class="header__menu-list">
+                   <li>
+                       <a href="#">
+                           <i class="menu__icon menu__icon-1"></i>
+                           <span>Статус визы</span>
+                       </a>
+                   </li>
+                   <li>
+                       <a href="#">
+                           <i class="menu__icon menu__icon-2"></i>
+                           <span>Продление</span>
+                       </a>
+                   </li>
+                   <li>
+                       <a href="#">
+                           <i class="menu__icon menu__icon-3"></i>
+                           <span>компаниЯ</span>
+                       </a>
+                   </li>
+                   <li>
+                       <a href="#">
+                           <i class="menu__icon menu__icon-4"></i>
+                           <span>Услуги & Цены</span>
+                       </a>
+                   </li>
+                   <li>
+                       <a href="#">
+                           <i class="menu__icon menu__icon-5"></i>
+                           <span>Контакты</span>
+                       </a>
+                   </li>
+               </ul>
+           </nav>
+           <div class="lang">
+               <a href="#" class="lang__rus lang__rus-active">RUS</a>
+               <a href="#" class="lang__eng">ENG</a>
+           </div>
+       </div>
+       <div class="header__bottom">
+           <form action="#">
+               <div class="header__picture"></div>
+               <div class="header__touch">
+                   <button>Нажми меня</button>
+               </div>
+               <div class="header__info">
+                   <div class="header__info-top">
+                       <span>26.06</span>
+                       <p>Комплексная страховка</p>
+                   </div>
+                   <div class="header__info-bottom">
+                        <div class="info__age">
+                            <h2>возраст</h2>
+                            <select name="info__age">
+                                <option value="1" name="age">10-30</option>
+                                <option value="2" name="age-2">30-60</option>
+                                <option value="3" name="age-3">60-90</option>
+                            </select>
+                        </div>
+                       <div class="info__year">
+                           <h2>В год</h2>
+                           <span>9000 Kč</span>
+                       </div>
+                       <div class="info_halfyear">
+                           <h2>Пол года</h2>
+                           <span>4500 Kč</span>
+                       </div>
+                   </div>
+               </div>
+           </form>
+       </div>
+   </div>
+    <div class="contact">
+        <div class="contact__tel">
+            <a href="tel:+420220770001" class="contact__call">+420 (220) 770 001</a>
+            <a href="#" class="contact__callback">Перезвонить</a>
+        </div>
+        <div class="contact__map">
+            <a href="#" class="contact__location">
+                václavské nám. 808/66
+            </a>
+            <a href="#" class="contact__drive">Карта Проезда</a>
+        </div>
+    </div>
+    <div class="pands">
+        <div class="pands__title">
+            <h2>Что значит <br>оформить  страховку в <span>Red</span>Panda?</h2>
+        </div>
+        <div class="pands__wrapper">
+            <div class="pands__list">
+                <div class="panda__row panda__row-one">
+                    <div class="panda__item panda__item-1">
+                        <h2>Бесплатный доступ <br>к <span class="panda__premium">Premium Care Club</span></h2>
+                        <a href="#" class="panda__on">Вступить</a>
+                    </div>
+                    <div class="panda__item panda__item-4">
+                        <h2>Бесплатное продление визы под ключ! </h2>
+                        <a href="#" class="panda__on">Открыть</a>
+                    </div>
+                </div>
+                <div class="panda__row panda__row-two">
+                    <div class="panda__item panda__item-2">
+                        <h2>Самая низкая цена или страховка<br> <span class="panda__premium">бесплатно!</span></h2>
+                        <a href="#" class="panda__on">оформить</a>
+                    </div>
+                    <div class="panda__item panda__item-5">
+                        <h2>МВД ЧР рекомендует для получения и продления долгосрочных виз и ВНЖ  </h2>
+                        <a href="#" class="panda__on">Узнать</a>
+                    </div>
+                </div>
+                <div class="panda__row panda__row-three">
+                    <div class="panda__item panda__item-3">
+                        <h2>Страховка #1 в Чехии
+                            по официальным
+                            рейтингам</h2>
+                        <a href="#" class="panda__on">узнать</a>
+                    </div>
+                    <div class="panda__item panda__item-6">
+                        <h2>Медицина класса люкс, частные клиники,
+                            личный ассистент,
+                            русскоязычные врачи</h2>
+                        <a href="#" class="panda__on">Получить</a>
+                    </div>
+                </div>
+            </div>
+            <div class="panda__list-mobile">
+                <div class="panda__row-mone">
+                    <div class="panda__item panda__item-1">
+                        <h2>Бесплатный доступ <br>к <span class="panda__premium">Premium Care Club</span></h2>
+                        <a href="#" class="panda__on">Вступить</a>
+                    </div>
+                    <div class="panda__item panda__item-4">
+                        <h2>Бесплатное продление визы под ключ! </h2>
+                        <a href="#" class="panda__on">Открыть</a>
+                    </div>
+                    <div class="panda__item panda__item-5">
+                        <h2>МВД ЧР рекомендует для получения и продления долгосрочных виз и ВНЖ  </h2>
+                        <a href="#" class="panda__on">Узнать</a>
+                    </div>
+                </div>
+                <div class="panda__row-mtwo">
+                    <div class="panda__item panda__item-2">
+                        <h2>Самая низкая цена или страховка<br> <span class="panda__premium">бесплатно!</span></h2>
+                        <a href="#" class="panda__on">оформить</a>
+                    </div>
+                    <div class="panda__item panda__item-3 panda__item-3mob">
+                        <h2>Страховка #1 в Чехии
+                            по официальным
+                            рейтингам</h2>
+                        <a href="#" class="panda__on">узнать</a>
+                    </div>
+                    <div class="panda__item panda__item-6 panda__item-6mob">
+                        <h2>Медицина класса люкс, частные клиники,
+                            личный ассистент,
+                            русскоязычные врачи</h2>
+                        <a href="#" class="panda__on">Получить</a>
+                    </div>
+                </div>
+            </div>
+            <ul class="pands__social">
+               <li>
+                   <a href="#" class="social__item social__item-1"></a>
+                   <a href="#" class="social__item-text">WhatsApp</a>
+               </li>
+                <li>
+                    <a href="#" class="social__item social__item-2"></a>
+                    <a href="#" class="social__item-text">Vkontakte</a>
+                </li>
+                <li>
+                    <a href="#" class="social__item social__item-3"></a>
+                    <a href="#" class="social__item-text">Email</a>
+                </li>
+                <li>
+                    <a href="#" class="social__item social__item-4"></a>
+                    <a href="#" class="social__item-text">Viber</a>
+                </li>
+                <li>
+                    <a href="#" class="social__item social__item-5"></a>
+                    <a href="#" class="social__item-text">Facebook</a>
+                </li>
+                <li>
+                    <a href="#" class="social__item social__item-6"></a>
+                    <a href="#" class="social__item-text">Telegram</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="whatpanda">
+        <div class="whatpanda__title">
+            <div class="whatpanda__title-icon">
+
+            </div>
+            <h2>Что же это за <span>панда</span> такая?</h2>
+        </div>
+        <div class="whatpanda__blocks">
+            <div class="whatpanda__info whatpanda__info-one">
+                <div class="whatpanda__info-title">
+                    <div class="whatpanda__percent-icon"></div>
+                    <h2>Крупнейший страховой агент</h2>
+                    <p>для иностранцев в Чехии</p>
+                </div>
+                <ul class="whatpanda__info-list">
+                    <li>6 лет на рынке Чехии</li>
+                    <li>15 лет на рынке страхования</li>
+                    <li> Входит в группу компаний Start <span>(Go Study, Start Work, Start Insurance, Red Preklady и другие)</span></li>
+                    <li>Крупнейшая партнерская сеть в стране</li>
+                </ul>
+            </div>
+            <div class="whatpanda__info whatpanda__info-two">
+                <div class="whatpanda__info-title">
+                    <div class="whatpanda__bubble-icon"></div>
+                    <h2>Главный партнер</h2>
+                    <p>крупнейших страховых компаний</p>
+                </div>
+                <ul class="whatpanda__info-list">
+                    <li>Генеральнй страховой партнер компании <b>MAXIMA</b>
+                       </li>
+                    <li> Значительный партнер компании pVZP
+                       </li>
+                    <li>  Контрактный партнер компаний Slavia, Uniqa, ČSOB pojišt’ovna, Česká pojišt’ovna, GENERALI pojišt’ovna и других
+                        </li>
+                    <li>Крупнейшая партнерская сеть в стране</li>
+                </ul>
+            </div>
+            <div class="whatpanda__info whatpanda__info-three">
+                <div class="whatpanda__info-title">
+                    <div class="whatpanda__clients-icon"></div>
+                    <h2>более 100 000</h2>
+                    <p>застрахованных клиентов</p>
+                </div>
+                <ul class="whatpanda__info-list">
+                    <li>Каждая вторая страховка для иностранцев в Чехии оформлена у нас
+                        <span>(более 50% всего рынка страхования иностранных студентов)</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="rewiews__director">
+        <div class="director__left">
+            <a href="#" class="director__logo">
+                <img src="img/logo_director.svg" alt="logo2">
+            </a>
+            <h2>
+                Отзыв директора розничных продаж компании MAXIMA: <span>Daniel Hindls</span>
+            </h2>
+            <p>За годы работы компания REDPANDA.CZ показала себя как один из самых успешных, тщательных и ответственных партнеров в области страхования иностранцев. Для нас было честью предоставить Red Panda сертификат "Ключевого партнера" страховой компании Максима.</p>
+        </div>
+        <div class="director__right">
+            <a href="#">
+                <img src="img/svvo-mini.png" alt="svvo">
+            </a>
+            <h2>
+                Страховое
+                <span>Свидетельство</span>
+            </h2>
+        </div>
+    </div>
+    <div class="searchus">
+        <div class="searchus__office">
+            <div class="office__title">
+                <h2>Как найти Наш <span>офис </span>в праге</h2>
+            </div>
+            <div class="searchus__blocks searchus__blocks-js">
+                <div class="searchus__block">
+                    <a href="#">
+                        <img src="img/office.png" alt="office">
+                    </a>
+                </div>
+                <div class="searchus__block">
+                    <a href="#">
+                        <img src="img/office.png" alt="office">
+                    </a>
+                </div>
+                <div class="searchus__block">
+                    <a href="#">
+                        <img src="img/office.png" alt="office">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="searchus__ouroffice">
+            <div class="office__title">
+                <h2>НАШ <span>офис</span> в праге</h2>
+            </div>
+            <div class="ouroffice__blocks ouroffice__blocks-js">
+                <div class="ouroffice__block">
+                    <a href="#">
+                        <img src="img/office-2.png" alt="img">
+                    </a>
+                </div>
+                <div class="ouroffice__block">
+                    <a href="#">
+                        <img src="img/office-2.png" alt="img">
+                    </a>
+                </div>
+                <div class="ouroffice__block">
+                    <a href="#">
+                        <img src="img/office-2.png" alt="img">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="partners">
+        <div class="partners__title">
+            <h2>Партнеры &
+                <span>рекомендации</span>
+            </h2>
+        </div>
+        <div class="partners__blocks">
+            <div class="partners__block partners__block-1">
+                <div class="partners__name">
+                    <div class="partners__img partners__img-1">
+                        <a href="#" class="partner__plus"></a>
+                    </div>
+                </div>
+                <div class="partners__description">
+                    <h2>Alikhan Khariphan</h2>
+                    <p>Президент организации
+                        "Тарлан" при посольстве
+                        республики Казахстан</p>
+                    <div class="partners__icon ">
+                        <a href="#" class="partners__vk">
+                            <img src="img/vk.svg" alt="vk">
+                        </a>
+                        <a href="#" class="partners__pdf">
+                            <img src="img/pdf.svg" alt="pdf">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="partners__block partners__block-2">
+                <div class="partners__name">
+                    <div class="partners__img partners__img-2">
+                        <a href="#" class="partner__plus"></a>
+                    </div>
+
+                </div>
+                <div class="partners__description">
+                    <h2>Maxim Politov</h2>
+                    <p>Руководитель молодежной
+                        организации "Объединение
+                        Русскоязычных студентов Праги</p>
+                    <div class="partners__icon partners__icon-2">
+                        <a href="#" class="partners__vk">
+                            <img src="img/vk.svg" alt="vk">
+                        </a>
+                        <a href="#" class="partners__pdf">
+                            <img src="img/pdf.svg" alt="pdf">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="partners__block partners__block-3">
+                <div class="partners__name">
+                    <div class="partners__img partners__img-3">
+                        <a href="#" class="partner__plus"></a>
+                    </div>
+
+                </div>
+                <div class="partners__description">
+                    <h2>Рузанна Алекян</h2>
+                    <p>Основатель и президент
+                        ассоциации армянской
+                        молодежи в Праге "ARMPRAHA"</p>
+                    <div class="partners__icon partners__icon-2">
+                        <a href="#" class="partners__vk">
+                            <img src="img/vk.svg" alt="vk">
+                        </a>
+                        <a href="#" class="partners__pdf">
+                            <img src="img/pdf.svg" alt="pdf">
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="partners__block partners__block-4">
+                <div class="partners__more">
+                    <h2>Больше</h2>
+                    <a href="#">рекомендации</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="vkcoments">
+        <div class="vkcomments__title">
+            <h2>отзывы</h2>
+        </div>
+    </div>
+    <div class="news">
+        <div class="news__title">
+            <h2>новости</h2>
+        </div>
+        <div class="news__blocks news__blocks-js">
+            <div class="news__block">
+                <div class="news__img news__img-1"></div>
+                <div class="news__block-title">
+                    <h2>В Чехии с июля вырастут цены на медстраховки для иностранцев</h2>
+                </div>
+                <div class="news__block-text">
+                    <p>В Чехии в течение ближайших нескольких недель прогнозируется рост цен на страховые услуги для иностранных граждан.</p>
+                </div>
+            </div>
+            <div class="news__block">
+                <div class="news__img news__img-2"></div>
+                <div class="news__block-title">
+                    <h2>Официально: цены на медстраховки для иностранцев вырастут до 12 тыс. крон</h2>
+                </div>
+                <div class="news__block-text">
+                    <p>Согласно актуальным данным, 27 июня, страховые компании официально утвердили дату очередного повышения цен на страховые услуги для иностранцев.</p>
+                </div>
+            </div>
+            <div class="news__block">
+                <div class="news__img news__img-3"></div>
+                <div class="news__block-title">
+                    <h2>7 изменений, которые произойдут в Чехии в июле</h2>
+                </div>
+                <div class="news__block-text">
+                    <p>Июль — месяц перемен. Начало сезона отпусков приносит собой множество новшеств, надо сказать, в большей степени приятных. К чему следует подготовиться?</p>
+                </div>
+            </div>
+            <div class="news__block">
+                <div class="news__img news__img-3"></div>
+                <div class="news__block-title">
+                    <h2>7 изменений, которые произойдут в Чехии в июле</h2>
+                </div>
+                <div class="news__block-text">
+                    <p>Июль — месяц перемен. Начало сезона отпусков приносит собой множество новшеств, надо сказать, в большей степени приятных. К чему следует подготовиться?</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="gold">
+        <div class="gold__title">
+            <h2>ценности <span>red</span>panda</h2>
+        </div>
+        <div class="gold__text">
+            <p class="gold__p gold__p1">
+                Страхование иностранцев в Чехии
+            </p>
+            <p class="gold__p gold__p2">
+                Медицинское Страхование в Чехии – процедура обязательная для всех проживающих в Чехии, так как
+                медицина в Чехии платная и довольно дорогая. Медицинская страховка поможет избежать проблем в
+                случае необходимости воспользоваться медицинской помощью, чем существенно сократит ваши расходы.
+            </p>
+            <p class="gold__p gold__p3">
+                Медицинскую страховку необходимо получить для оформления или продления визы на более 90 дней, в
+                том числе для студенческой. Недорогое страхование в Праге особенно важно для студентов, которые не располагают
+                лишними деньгами.  омплексное страхование иностранцев в Чехии дает им возможность стационарного и амбулаторного
+                лечения, услуг скорой помощи, стоматолога, покупки лекарственных препаратов по рецепту врача.
+            </p>
+            <p class="gold__p gold__p4">
+                При оформлении рабочей визы, вида на жительство или во время подачи документов на ПМЖ также
+                необходимо наличие комплексной медстраховки.
+            </p>
+            <p class="gold__p gold__p5">
+                Медобслуживание в Чехии платное, поэтому любой человек, независимо от статуса, обязан, согласно закону, иметь
+                медстраховку. REDPANDA.CZ дает возможность оформить эту и многие другие виды страховок, которые покрывают разные виды услуг.
+            </p>
+            <div class="gold__none">
+                <p class="gold__p gold__p6">
+                    Медицинское страхование в Чехии предлагает два вида страховок: комплексная медстраховка и страховка на экстренные случаи.
+                </p>
+                <p class="gold__p gold__p7">
+                    Страховки в Праге для экстренных случаев предполагают только определенный вид услуг. Например, если вы попадаете в
+                    такую ситуацию, осмотр врача будет для вас бесплатным, но заплатить за анализы, УЗИ или регент придется своими средами.
+                    Такая страховка подходит только для туристической визы.  омплексные медицинские страховки в Чехии подходят для обоих случаев.
+                    Они покрывают большое количество услуг, в том числе стоматологическую помощь при внезапной боли или вследствие полученной
+                    травмы.  омплексная страховка - обязательна для долгосрочных виз либо ВНЖ в Чехии по законодательству ЧР.
+                </p>
+                <p class="gold__p gold__p8">
+                    Услуги и ценности REDPANDA
+                </p>
+                <p class="gold__p gold__p9">
+                    Как показала практика, страхование иностранцев в Праге - это не единственное, в чем они нуждаются. Они нуждаются
+                    в сопутствующих услугах, и хотели бы получить их в одном месте, поэтому мы расширили возможности нашей компании и
+                    можем предложить им консультацию или помощь в решении многих вопросов.
+                </p>
+                <p class="gold__p gold__p10">
+                    Страховки в Чехии оформляются без задержек и повторного посещения нашей компании, и занимает этот процесс не более
+                    15 минут. Вам не придется тратить время, чтобы нас найти, так как офисREDPANDA расположен в центре Праги.
+                    Здесь вы всегда можете рассчитывать на радушие и индивидуальный подход к каждому клиенту. В непринужденной обстановке
+                    за чашечкой кофе вы сможете решить все свои проблемы и получить ответы даже на те вопросы, которые не имеют отношения
+                    к работе фирмы.
+                </p>
+                <p class="gold__p gold__p11">
+                    Работая на протяжении многих лет с ведущими страховыми компаниями, мы показали себя как фирма, ориентирующаяся
+                    на качественное и оперативное решение проблем иностранцев. Именно поэтому нас рекомендуют своим клиентам страховые
+                    компании, языковые курсы, студенческие организации. Мы обеспечиваем круглосуточную телефонную поддержку по любым
+                    вопросам, связанным со страхованием, лечением, продлением виз.
+                </p>
+                <p class="gold__p gold__p12">
+                    Достойное обслуживание и внимание к каждому человеку – залог положительных отзывов и увеличения базы постоянных клиентов.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer__wrap">
+            <h2 class="footer__year">© 2015</h2>
+            <div class="footer__info">
+                <a href="#" class="footer__post">
+                    Pojišťovací agent registrační číslo <span>207771PPZ</span>
+                </a>
+                <a href="#" class="footer__adress">
+                    Opletalova 1535/4, Praha 1, 110 00, office №138
+                </a>
+                <div class="footer__contact">
+                    <a href="tel:+420773528099" class="footer__tel">
+                        + 420 773 528 099
+                    </a>
+
+                    <a href="#" class="footer__mail">
+                        @info@likein.cz
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/libs.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+.burger__close1{
+
+  margin-top: 5px!important;
+  span{
+    margin-top: 0!important;
+    width: 25px!important;
+    height: 1px!important;
+    &:nth-child(2){
+      display: none;
+    }
+    &:nth-child(1){
+      transform: rotate(50deg);
+    }
+    &:nth-child(3){
+      transform: rotate(130deg);
+
+    }
+  }
+}
+.burger__close{
+  background: url("..//img/times-solid.svg")50% 50% no-repeat!important;
+  width: 30px;
+  height: 30px;
+  span{
+    display: none!important;
+    color: blue;
+  }
+}

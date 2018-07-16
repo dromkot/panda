@@ -1,0 +1,114 @@
+.whatpanda{
+  margin-top: 32px;
+}
+.whatpanda__title-icon{
+
+  width: 139px;
+  height: 97px;
+  background: url("..//img/whatpanda.png")50% 50% no-repeat;
+}
+.whatpanda__title{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h2{
+    color: #000000;
+    font-family: "Elektra Text Pro",sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    max-width: 366px;
+    text-align: center;
+    margin-top: 22px;
+    span{
+      color: #fe2f2f;
+    }
+  }
+}
+.whatpanda__info{
+  width: 30%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  li{
+    position: relative;
+    padding-left: 20px;
+    &:before{
+      position: absolute;
+      content: '';
+      left: 0;
+      height: 2px;
+      width: 13px;
+      background: #333;
+      top: 10px;
+
+    }
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+.whatpanda__info-title{
+  text-align: center;
+  h2{
+    color: #fe2f2f;
+    font-family: "Open Sans",sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.28px;
+  }
+  p{
+    color: #000000;
+    font-family: "Open Sans",sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+
+  }
+}
+.whatpanda__info-list{
+  margin-top: 10px;
+  li{
+    color: #000000;
+    font-family: "Open Sans",sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  span{
+    font-weight: 400;
+  }
+}
+.whatpanda__percent-icon{
+  margin: 0 auto;
+  width: 171px;
+  height: 131px;
+  background: url("../img/percent.svg")50% 50% no-repeat;
+
+}
+.whatpanda__blocks{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 26px;
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+  }
+  b{
+    color: #f02631;
+  }
+}
+.whatpanda__bubble-icon{
+  margin: 0 auto;
+  background: url("..//img/bubble.svg")50% 50% no-repeat;
+  width: 171px;
+  height: 131px;
+}
+.whatpanda__clients-icon{
+  margin: 0 auto;
+  background: url("..//img/clients.svg")50% 50% no-repeat;
+  width: 171px;
+  height: 131px;
+}

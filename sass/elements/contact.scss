@@ -1,0 +1,81 @@
+.contact{
+  display: flex;
+  justify-content: center;
+  margin-top: 23px;
+}
+.contact__tel{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact__map{
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+  align-items: center;
+  @media (max-width: 576px) {
+    margin-left: 30px;
+  }
+}
+.contact__call{
+  color: #000000;
+  font-family: "Elektra Text Pro",sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  position: relative;
+  padding-left: 25px;
+  text-align: center;
+  @media (max-width: 576px) {
+    font-size: 12px;
+    padding-left: 20px;
+  }
+  &:before{
+    position: absolute;
+    content: '';
+    background: url("..//img/tel_icon.svg")50% 50% no-repeat;
+    width: 18px;
+    height: 18px;
+    left: 0;
+    top: 0;
+  }
+}
+.contact__location{
+  color: #000000;
+  font-family: "Elektra Text Pro",sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  position: relative;
+  padding-left: 25px;
+  text-transform: uppercase;
+  text-align: center;
+  @media (max-width: 576px) {
+    font-size: 12px;
+    padding-left: 20px;
+  }
+  &:before{
+    position: absolute;
+    content: '';
+    background: url("..//img/loco_icon.svg")50% 50% no-repeat;
+    width: 18px;
+    height: 18px;
+    left: 0;
+    top: 0;
+  }
+}
+.contact__callback,.contact__drive{
+  background: url("..//img/button.png");
+  color: #ffffff;
+  font-family: "Elektra Text Pro",sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 7px 25px;
+  border-radius: 18px;
+  margin-top: 10px;
+  @media (max-width: 576px) {
+    font-size: 10px;
+  }
+  &:hover{
+    background: rgb(255, 0, 0);
+  }
+}

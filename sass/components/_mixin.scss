@@ -1,0 +1,24 @@
+
+@media (max-width: 1200px){
+
+}
+@media (max-width: 992px) {
+
+}
+@media (max-width: 768px) {
+
+}
+@media (max-width: 576px) {
+
+}
+
+&:before{
+  position: absolute;
+  content: '';
+  top: 4px;
+  left: 0;
+  background: url("..//img/tell.svg")50% 50% no-repeat;
+  width: 14px;
+  height: 14px;
+}
+
